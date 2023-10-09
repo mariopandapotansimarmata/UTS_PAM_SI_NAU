@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sinau_uts_mobile/menu_bangun_ruang.dart';
+import 'package:sinau_uts_mobile/menu.dart';
+import 'package:sinau_uts_mobile/profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   int _selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
     const BangunRuang(),
-    const BangunRuang(),
+    const Profile(),
   ];
 
   void _onItemTapped(int index) {
@@ -36,7 +37,9 @@ class _MyAppState extends State<MyApp> {
         ),
         home: Scaffold(
           appBar: AppBar(
-            title: Text("Manu Bangun Ruang"),
+            title: _selectedIndex == 0
+                ? Text("Manu Bangun Ruang")
+                : Text("Profile"),
             backgroundColor: Colors.purple[100],
           ),
           body: Center(
